@@ -1,3 +1,3 @@
 ## Sections
 
-* [Selectors](selectors/index.md)
+* [Selectors](selectors/README.md)

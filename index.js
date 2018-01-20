@@ -8,7 +8,6 @@ const markdownEngine = require('./lib/markdown-engine');
 // Define port to run server on
 var port = process.env.PORT || 3000 ;
 
-
 app.use(express.static('public'));
 
 app.engine('md', markdownEngine);
@@ -17,7 +16,8 @@ app.set('view engine', 'md')
 app.get('/css/selectors/examples/*', selectorsExamplesRenderer);
 
 app.get('*', function (req, res) {
-    res.render(`${__dirname}/notes${req.path}`);
+	const reqPath = req.path === '/' ? '/README.md' : req.path;
+    res.render(`${__dirname}/notes${reqPath}`);
 });
 
 // Start server
