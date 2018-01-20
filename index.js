@@ -16,7 +16,7 @@ app.set('view engine', 'md')
 app.get('/css/selectors/examples/*', selectorsExamplesRenderer);
 
 app.get('*', function (req, res) {
-	const reqPath = req.path === '/' ? '/README.md' : req.path;
+	const reqPath = req.path === '/' ? `${req.path}README.md` : req.path;
     res.render(`${__dirname}/notes${reqPath}`);
 });
 
