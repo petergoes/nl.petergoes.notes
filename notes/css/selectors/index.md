@@ -1,10 +1,10 @@
 # Selectors
 
 **Basic selectors:**
-* **`*`**: Matches [any element](examples/any)
-* **`E`**: Matches a specified [element](examples/element)
-* **`.class`**: Matches an element with a specified [class](examples/class) attribute
-* **`#id`**: Matches an element with a specified [id](examples/id) attribute
+* **`*`**: Matches [any element](examples/any.md)
+* **`E`**: Matches a specified [element](examples/element.md)
+* **`.class`**: Matches an element with a specified [class](examples/class.md) attribute
+* **`#id`**: Matches an element with a specified [id](examples/id.md) attribute
 * **`E[attribute]`**: 
 * **`E[attribute=value]`**: 
 * **`E[attribute~=value]`**: 
