@@ -1,0 +1,41 @@
+{% extends baseTemplate %}
+
+{% set title = "Selectors Example: <code>" + name + "</code>" %}
+{% set mainClass = "css-selectors-examples" %}}
+
+{% block styles %}
+<link rel="stylesheet" href="/css-selectors-examples.css">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> -->
+<link rel="stylesheet" href="/highlightjs-theme.css">
+
+<style>[data-result]
+{{ styles }}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="example__description"  data-label="Description">
+<blockquote>{{ content | safe }}</blockquote>
+</section>
+
+<section class="example__code example__code--style" data-label="CSS">
+<pre><code class="lang-css">
+{{ styles }}
+</code></pre>
+</section>
+
+<section class="example__code example__code--html" data-label="HTML">
+<pre><code class="lang-html">
+{{ markup }}
+</code></pre>
+</section>
+
+<section class="example__result" data-result  data-label="Result">
+{{ markup | safe }}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}

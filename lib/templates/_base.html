@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>{% if title and title != "Notes" %}{{ title | striptags }} | {% endif %}Notes | Peter Goes</title>
+
+<link rel="stylesheet" href="/normalize.css">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/typography.css">
+<link rel="stylesheet" href="/components/header.css">
+<link rel="stylesheet" href="/components/nav.css">
+
+<link rel="shortcut icon" href="/assets/logo-192.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+{% block styles %}
+{% endblock %}
+
+</head>
+<body>
+<header class="page-header">
+	<div class="page-header__link-wrapper">
+		<a href="/" class="page-header__link">
+			<span class="page-header__name"><span class="page-header__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-header__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-header__occupation">
+					<span class="page-header__property">frontEnd</span><span class="page-header__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-header__property--value">developer</span><span class="page-header__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-header__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
+	<h1 class="page-header__title">{{ title | safe }}</h1>
+</header>
+
+{% if breadcrumbs.length > 1 %}
+<nav class="breadcrumbs">
+{% for breadcrumb in breadcrumbs %}
+	{% if not loop.first %}&gt; {% endif %} 
+	{% if not loop.last %}<a href="{{ breadcrumb.uri }}">{% endif %}
+	{{ breadcrumb.label }}
+	{% if not loop.last %}</a>{% endif %}
+{% endfor %}
+</nav>
+{% endif %}
+
+<main class="{{ mainClass }}" role="main">
+{% block content %}
+{{ content | safe }}
+{% endblock %}
+</main>
+
+<footer class="page-footer">
+	
+</footer>
+
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
