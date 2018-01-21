@@ -23,15 +23,16 @@ html {
 body {
   margin: 0;
   display: grid;
-  grid-gap: 1.5rem;
   grid-column-gap: 1.5rem;
   grid-row-gap: 2.5rem;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr minmax(0, 1024px) 1fr;
+  grid-template-rows: max-content max-content 1fr max-content;
+  min-height: 100vh;
 }
 
-main {
-  padding-left: 1rem;
-	padding-right: 1rem;
+body > * {
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
 p {
@@ -59,12 +60,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* min width: 1024px + 2rem (1rem = 16px) */
-@media (min-width: 1040px) {
-  main {
-    width: 1024px;
-    margin: 0 auto;
-  }
 }
