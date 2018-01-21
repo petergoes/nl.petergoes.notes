@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/base.css">
 <link rel="stylesheet" href="/typography.css">
 <link rel="stylesheet" href="/components/header.css">
+<link rel="stylesheet" href="/components/footer.css">
 <link rel="stylesheet" href="/components/nav.css">
 
 <link rel="shortcut icon" href="/assets/logo-192.png">
@@ -21,19 +22,9 @@
 </head>
 <body>
 <header class="page-header">
-	<div class="page-header__link-wrapper">
-		<a href="/" class="page-header__link">
-			<span class="page-header__name"><span class="page-header__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-header__code-decoration" aria-hidden="true" role="presentation">{</span> 
-				<span class="page-header__occupation">
-					<span class="page-header__property">frontEnd</span><span class="page-header__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-header__property--value">developer</span><span class="page-header__code-decoration" aria-hidden="true" role="presentation">;</span></span>
-				</span>
-			<span class="page-header__code-decoration" aria-hidden="true" role="presentation">}</span>
-		</a>
-	</div>
 	<h1 class="page-header__title">{{ title | safe }}</h1>
 </header>
 
-{% if breadcrumbs.length > 1 %}
 <nav class="breadcrumbs">
 {% for breadcrumb in breadcrumbs %}
 	{% if not loop.first %}&gt; {% endif %} 
@@ -42,7 +33,6 @@
 	{% if not loop.last %}</a>{% endif %}
 {% endfor %}
 </nav>
-{% endif %}
 
 <main class="{{ mainClass }}" role="main">
 {% block content %}
@@ -51,7 +41,15 @@
 </main>
 
 <footer class="page-footer">
-	
+	<div class="page-footer__link-wrapper">
+		<a href="https://petergoes.nl" class="page-footer__link">
+			<span class="page-footer__name"><span class="page-footer__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-footer__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-footer__occupation">
+					<span class="page-footer__property">frontEnd</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-footer__property--value">developer</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-footer__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
 </footer>
 
 {% block scripts %}
