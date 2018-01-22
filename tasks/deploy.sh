@@ -5,14 +5,13 @@ set -e # exit with nonzero exit code if anything fails
 if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then
 
 echo "Starting to update gh-pages\n"
-pwd
-ls
+
 #copy data we're interested in to other place
 cp -R build/* $HOME/build
 
 #go to home and setup git
 cd $HOME
-pwd
+
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis"
 
@@ -24,11 +23,12 @@ cd gh-pages
 
 # remove all existing files
 git rm -r *
-git add -f .
 
 # copy stored files
 cp -Rf $HOME/build/* .
-ls
+
+git rm petergoes
+
 echo "Allow files with underscore https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" > .nojekyll
 echo "[View live](https://${GH_USER}.github.io/${GH_REPO}/)" > README.md
 
