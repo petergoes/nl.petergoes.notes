@@ -4,7 +4,10 @@
   "description": "My deep dive into css",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ext html,md,css index.js"
+    "start": "nodemon --ext html,md,css index.js",
+    "build": "npm-run-all build:*",
+    "build:html": "node tasks/build-html.js",
+    "build:assets": "ncp public build"
   },
   "keywords": [
     "css"
@@ -13,8 +16,12 @@
   "license": "ISC",
   "devDependencies": {
     "expressjs": "1.0.1",
+    "glob": "7.1.2",
     "lodash": "4.17.4",
-    "nodemon": "1.14.10"
+    "mkdirp": "0.5.1",
+    "ncp": "2.0.0",
+    "nodemon": "1.14.10",
+    "npm-run-all": "4.1.2"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.2",
