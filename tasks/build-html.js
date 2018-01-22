@@ -14,6 +14,12 @@ const saveContent = (path, content) => writeFile(path, content);
 const renderSelectorsExamples = renderFile(selectorsExamplesRenderer);
 const renderMarkdown = renderFile(markdownRenderer);
 
+function replaceReadMeForIndex(content) {
+	return content
+		.replace(/README.md/g, 'index.html')
+		.replace(/\.md/g, '.html');
+}
+
 function renderFile(renderer) {
 	return function (filePath) {
 		return new Promise((resolve, reject) => {
@@ -26,7 +32,7 @@ function renderFile(renderer) {
 			const reqObj = {path: relative}
 			const resObj = {send: content => {
 					mkdirp(outputDir)
-						.then(() => writeFile(outputFile, content))
+						.then(() => writeFile(outputFile, replaceReadMeForIndex(content)))
 						.then(resolve)
 						.catch(reject);
 				}
