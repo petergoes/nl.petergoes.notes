@@ -7,7 +7,8 @@
     "start": "nodemon --ext html,md,css index.js",
     "build": "npm-run-all build:*",
     "build:html": "node tasks/build-html.js",
-    "build:assets": "ncp public build"
+    "build:assets": "ncp public build",
+    "publish": "push-dir --dir=build --branch=gh-pages"
   },
   "keywords": [
     "css"
@@ -21,7 +22,8 @@
     "mkdirp": "0.5.1",
     "ncp": "2.0.0",
     "nodemon": "1.14.10",
-    "npm-run-all": "4.1.2"
+    "npm-run-all": "4.1.2",
+    "push-dir": "0.4.1"
   },
   "dependencies": {
     "cheerio": "1.0.0-rc.2",
