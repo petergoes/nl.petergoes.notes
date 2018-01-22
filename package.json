@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --ext html,md,css index.js",
+    "prebuild": "rimraf build",
     "build": "npm-run-all build:*",
     "build:html": "node tasks/build-html.js",
     "build:assets": "ncp public build",
-    "prepublish": "rimraf build && npm run build && npm run replace-for-gh-pages",
-    "publish": "push-dir --dir=build --branch=gh-pages",
-    "replace-for-gh-pages": "find build/* -type f -name '*.html' | xargs sed -i '' 's/href=\"\\//href=\"\\/notes\\//g'"
+    "postbuild": "npm run replace-for-gh-pages",
+    "replace-for-gh-pages": "replace 'href=\"/' 'href=\"/notes/' build --recursive --silent --include='*.html'"
   },
   "keywords": [
     "css"
@@ -25,7 +25,7 @@
     "ncp": "2.0.0",
     "nodemon": "1.14.10",
     "npm-run-all": "4.1.2",
-    "push-dir": "0.4.1",
+    "replace": "0.3.0",
     "rimraf": "2.6.2"
   },
   "dependencies": {
