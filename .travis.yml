@@ -14,9 +14,8 @@ before_script:
 - npm prune
 script:
 - npm run build
-- npm test
 after_success:
-- bash ./scripts/deploy.sh
+- bash ./tasks/deploy.sh
 env:
   global:
   - GH_USER: petergoes
