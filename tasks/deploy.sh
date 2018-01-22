@@ -21,9 +21,6 @@ git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/${GH_USER}/${
 #go into directory and copy data we're interested in to that directory
 cd gh-pages
 
-# remove all existing files
-git rm -r *
-
 # copy stored files
 cp -Rf $HOME/build/* .
 
