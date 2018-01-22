@@ -8,8 +8,9 @@
     "build": "npm-run-all build:*",
     "build:html": "node tasks/build-html.js",
     "build:assets": "ncp public build",
-    "prepublish": "rimraf build && npm run build",
-    "publish": "push-dir --dir=build --branch=gh-pages"
+    "prepublish": "rimraf build && npm run build && npm run replace-for-gh-pages",
+    "publish": "push-dir --dir=build --branch=gh-pages",
+    "replace-for-gh-pages": "find build/* -type f -name '*.html' | xargs sed -i '' 's/href=\"\\//href=\"\\/notes\\//g'"
   },
   "keywords": [
     "css"
