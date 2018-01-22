@@ -23,7 +23,7 @@ git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/${GH_USER}/${
 cd gh-pages
 
 # remove all existing files
-git rm *
+git rm -r *
 git add -f .
 
 # copy stored files
