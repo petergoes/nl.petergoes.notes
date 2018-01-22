@@ -16,7 +16,7 @@ const renderMarkdown = renderFile(markdownRenderer);
 
 function replaceReadMeForIndex(content) {
 	return content
-		.replace(/README.md/g, 'index.html')
+		.replace(/README.md/g, '')
 		.replace(/\.md/g, '.html');
 }
 
