@@ -1,9 +1,0 @@
-.page-header {
-	text-align: center;
-	position: relative;
-	height: var(--header-height);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-bottom: 1px solid var(--code-background);
-}
