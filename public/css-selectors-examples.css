@@ -1,7 +1,7 @@
 .css-selectors-examples {
     display: grid;
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 2.5rem;
+    grid-column-gap: var(--default-spacing);
+    grid-row-gap: var(--double-spacing);
 }
 
 .css-selectors-examples pre {
@@ -22,8 +22,7 @@
 }
 
 .example__code code {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: var(--default-spacing);
     flex: 1;
 }
 
