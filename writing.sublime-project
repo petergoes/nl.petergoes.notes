@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Volumes/TarDisk/Personal/nl.petergoes.notes",
+			"folder_exclude_patterns": [
+				"build",
+				"lib",
+				"public",
+				"tasks"
+			],
+			"file_exclude_patterns": [
+				".*",
+				"*.js",
+				"*.json",
+				"*.sublime*"
+			],
+		}
+	]
+}
