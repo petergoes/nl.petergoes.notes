@@ -13,18 +13,22 @@
   --code-regex: #69a5ff;
 
   --header-height: 6rem;
+  --default-spacing: 0.5rem;
+  --double-spacing: calc(var(--default-spacing) * 2);
+
+  --line-height: 1.5;
 }
 
 html {	
 	font-family: 'Roboto';
-  line-height: 1.5rem;
+  line-height: var(--line-height);
 }
 
 body {
   margin: 0;
   display: grid;
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 2.5rem;
+  grid-column-gap: var(--default-spacing);
+  grid-row-gap: var(--double-spacing);
   grid-template-columns: 1fr minmax(0, 1024px) 1fr;
   grid-template-rows: max-content max-content 1fr max-content;
   min-height: 100vh;
@@ -60,4 +64,16 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --default-spacing: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --default-spacing: 1.5rem;
+  }
 }
