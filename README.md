@@ -4,6 +4,6 @@ These are my notes on front-end development. Do not mistake this for documentati
 
 ## Subjects
 
-* [html](notes/html/README.md)
-* [css](notes/css/README.md)
-* [javascript](notes/javascript/README.md)
+* [html](/notes/html/README.md)
+* [css](/notes/css/README.md)
+* [javascript](/notes/javascript/README.md)
