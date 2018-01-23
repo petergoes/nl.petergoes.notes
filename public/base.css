@@ -14,7 +14,7 @@
 
   --header-height: 6rem;
   --default-spacing: 0.5rem;
-  --double-spacing: 1rem;
+  --double-spacing: calc(var(--default-spacing) * 2);
 
   --line-height: 1.5;
 }
@@ -64,4 +64,16 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --default-spacing: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --default-spacing: 1.5rem;
+  }
 }
