@@ -15,7 +15,12 @@
     "replace-for-gh-pages:css": "replace \"url.'/\" \"url('/notes/\" build --recursive --silent --include='*.css'"
   },
   "keywords": [
-    "css"
+    "notes",
+    "front-end",
+    "html",
+    "css",
+    "javascript",
+    "js"
   ],
   "author": "Peter Goes <petergoes@gmail.com>",
   "license": "ISC",
