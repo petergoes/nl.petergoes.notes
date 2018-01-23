@@ -23,7 +23,7 @@ cd gh-pages
 
 # copy stored files
 cp -Rf $HOME/build/* .
-
+cat index.html
 echo "Allow files with underscore https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" > .nojekyll
 echo "[View live](https://${GH_USER}.github.io/${GH_REPO}/)" > README.md
 
