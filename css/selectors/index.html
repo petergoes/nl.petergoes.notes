@@ -46,19 +46,20 @@
 
 <main class="" role="main">
 
+<p><a href="https://www.w3.org/TR/css3-selectors/">CSS3 spec - selectors</a></p>
 <p><strong><a href="basic-selectors.html">Basic selectors:</a></strong></p>
 <ul>
 <li><strong><code>*</code></strong>: Matches <a href="examples/any.html">any element</a></li>
 <li><strong><code>E</code></strong>: Matches a specified <a href="examples/element.html">element</a></li>
 <li><strong><code>.class</code></strong>: Matches an element with a specified <a href="examples/class.html">class</a> attribute</li>
 <li><strong><code>#id</code></strong>: Matches an element with a specified <a href="examples/id.html">id</a> attribute</li>
-<li><strong><code>E[attribute]</code></strong>: </li>
-<li><strong><code>E[attribute=value]</code></strong>: </li>
-<li><strong><code>E[attribute~=value]</code></strong>: </li>
-<li><strong><code>E[attribute|=value]</code></strong>: </li>
-<li><strong><code>E[attribute^=value]</code></strong>: </li>
-<li><strong><code>E[attribute$=value]</code></strong>: </li>
-<li><strong><code>E[attribute*=value]</code></strong>: </li>
+<li><strong><code>E[attribute]</code></strong>: Matches an element with a specified <a href="examples/attribute.html">attribute</a></li>
+<li><strong><code>E[attribute=value]</code></strong>: Matches an element with a specific <a href="examples/attribute-equal.html">equal</a> attribute / value pair</li>
+<li><strong><code>E[attribute~=value]</code></strong>: Matches an element with an attribute that includes <a href="examples/attribute-whitespace-separated.html">whitespace-seperated</a> word equal to the value</li>
+<li><strong><code>E[attribute|=value]</code></strong>: Matches an element with an attribute that includes <a href="examples/attribute-hyphen-separated.html">hyphen-seperated</a> list of values starting with the value</li>
+<li><strong><code>E[attribute^=value]</code></strong>: Matches an element with an attribute where the value <a href="examples/attribute-starts-with.html">starts with</a> exactly the value</li>
+<li><strong><code>E[attribute$=value]</code></strong>: Matches an element with an attribute where the value <a href="examples/attribute-ends-with.html">ends with</a> exactly the value</li>
+<li><strong><code>E[attribute*=value]</code></strong>: Matches an element with an attribute that <a href="examples/attribute-contains.html">contains</a> the value somewhere.</li>
 </ul>
 <p><strong><a href="combinators.html">Combinators:</a></strong></p>
 <ul>

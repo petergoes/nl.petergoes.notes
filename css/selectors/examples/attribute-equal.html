@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Selectors Example: attribute-equal | Notes | Peter Goes</title>
+
+<link rel="stylesheet" href="/notes/normalize.css">
+<link rel="stylesheet" href="/notes/base.css">
+<link rel="stylesheet" href="/notes/typography.css">
+<link rel="stylesheet" href="/notes/components/header.css">
+<link rel="stylesheet" href="/notes/components/footer.css">
+<link rel="stylesheet" href="/notes/components/nav.css">
+
+<link rel="shortcut icon" href="/notes/assets/logo-192.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+
+<link rel="stylesheet" href="/notes/css-selectors-examples.css">
+<!-- <link rel="stylesheet" href="/notes//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> -->
+<link rel="stylesheet" href="/notes/highlightjs-theme.css">
+
+<style>[data-result]
+section[foo=bar] {
+    border: 3px dotted black;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+</style>
+
+
+</head>
+<body>
+<header class="page-header">
+	<h1 class="page-header__title">Selectors Example: <code>attribute-equal</code></h1>
+</header>
+
+<nav class="breadcrumbs">
+
+	 
+	<a href="/notes/">
+	home
+	</a>
+
+	&gt;  
+	<a href="/notes/css/">
+	css
+	</a>
+
+	&gt;  
+	<a href="/notes/css/selectors/">
+	selectors
+	</a>
+
+	&gt;  
+	
+	examples
+	
+
+</nav>
+
+<main class="css-selectors-examples" role="main">
+
+<section class="example__description"  data-label="Description">
+<blockquote><p>The <code>E[foo=bar]</code> selector matches an element whose <code>foo</code> attribute value is exactly equal to <code>bar</code></p>
+
+
+</blockquote>
+</section>
+
+<section class="example__code example__code--style" data-label="CSS">
+<pre><code class="lang-css">section[foo=bar] {
+    border: 3px dotted black;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+</code></pre>
+</section>
+
+<section class="example__code example__code--html" data-label="HTML">
+<pre><code class="lang-html">&lt;section foo=&quot;bar&quot;&gt;
+    Attribute foo=&quot;bar&quot;
+&lt;/section&gt;
+&lt;section foo=&quot;bar &quot;&gt;
+    Attribute foo=&quot;bar &quot;
+    (note the space)
+&lt;/section&gt;
+&lt;section foo=&quot;bar-baz&quot;&gt;
+    Attribute foo=&quot;bar-baz&quot;
+&lt;/section&gt;
+&lt;section foo=&quot;blub bar baz&quot;&gt;
+    Attribute foo=&quot;blub bar baz&quot;
+&lt;/section&gt;
+</code></pre>
+</section>
+
+<section class="example__result" data-result  data-label="Result">
+<section foo="bar">
+    Attribute foo="bar"
+</section>
+<section foo="bar ">
+    Attribute foo="bar "
+    (note the space)
+</section>
+<section foo="bar-baz">
+    Attribute foo="bar-baz"
+</section>
+<section foo="blub bar baz">
+    Attribute foo="blub bar baz"
+</section>
+
+</section>
+
+</main>
+
+<footer class="page-footer">
+	<div class="page-footer__link-wrapper">
+		<a href="https://petergoes.nl" class="page-footer__link">
+			<span class="page-footer__name"><span class="page-footer__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-footer__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-footer__occupation">
+					<span class="page-footer__property">frontEnd</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-footer__property--value">developer</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-footer__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
+</footer>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
