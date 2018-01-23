@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Higer Order Function: Catch any Promise | Notes | Peter Goes</title>
+
+<link rel="stylesheet" href="/notes/normalize.css">
+<link rel="stylesheet" href="/notes/base.css">
+<link rel="stylesheet" href="/notes/typography.css">
+<link rel="stylesheet" href="/notes/components/header.css">
+<link rel="stylesheet" href="/notes/components/footer.css">
+<link rel="stylesheet" href="/notes/components/nav.css">
+
+<link rel="shortcut icon" href="/notes/assets/logo-192.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+<link rel="stylesheet" href="/notes/highlightjs-theme.css">
+
+
+
+</head>
+<body>
+<header class="page-header">
+	<h1 class="page-header__title">Higer Order Function: Catch any Promise</h1>
+</header>
+
+<nav class="breadcrumbs">
+
+	 
+	<a href="/notes/">
+	home
+	</a>
+
+	&gt;  
+	
+	javascript
+	
+
+</nav>
+
+<main class="" role="main">
+
+<p><a href="https://codepen.io/petergoes/pen/QaPPpr?editors=0012">The codepen</a></p>
+<p>I did not check to see if the <code>catchWith</code> function could handle a function that
+does <em>not</em> return a promise, and catches an error.</p>
+<pre><code class="lang-javascript">// This function will throw an error.
+// You can&#39;t use this function directly because 
+// JavaScript will stop working after the error is thrown
+function myFailingPromise(msg) {
+    return new Promise(resolve =&gt; {
+        throw new Error(msg);
+    });
+}
+
+
+// The Higher Order Function which will catch errors
+// First it accepts an error handler...
+function catchWith(errorHandler) {
+    // ...Then it produces an function which accepts the function that will 
+    // throw an error...
+    return function catcher(fn) {
+        // ...Then it produces a function that can run the provided failing 
+        // function
+        return function catched(...args) {
+            // When the runner function is called, it returns the result like 
+            // nothing happens...
+            return fn(...args)
+                // ...or it catches any errors and let the error handler take 
+                // care of it.
+                // If errorHandler is not defined, log the error to the console
+                .catch(errorHandler || console.log)
+        }
+    }
+}
+
+// How to use it:
+
+// First we create two versions of the `catchWith` function.
+// The first one uses `console.warn` to handle the error
+// The second one uses `console.log` to handle the error
+// You could also provide a function which logs the error to a database
+const catchWithWarn = catchWith(console.warn);
+const catchWithLog = catchWith(console.log);
+
+// With the two catcher functions just created, you can create 
+// two safe versions of the unsafe `myFailingPromise` function
+const logFailingPromise = catchWithLog(myFailingPromise);
+const warnFailingPromise = catchWithWarn(myFailingPromise);
+
+// Now you can safely use the two versions of `myFailingPromise`
+logFailingPromise(&#39;log this error&#39;);
+warnFailingPromise(&#39;warn this error&#39;);
+
+console.log(&#39;See? I still run!&#39;);
+</code></pre>
+
+
+</main>
+
+<footer class="page-footer">
+	<div class="page-footer__link-wrapper">
+		<a href="https://petergoes.nl" class="page-footer__link">
+			<span class="page-footer__name"><span class="page-footer__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-footer__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-footer__occupation">
+					<span class="page-footer__property">frontEnd</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-footer__property--value">developer</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-footer__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
