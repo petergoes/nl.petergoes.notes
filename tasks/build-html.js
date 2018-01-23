@@ -7,6 +7,7 @@ const glob = util.promisify(require('glob'));
 const mkdirp = util.promisify(require('mkdirp'));
 const writeFile = util.promisify(require('fs').writeFile);
 
+const rootFolder = path.resolve(__dirname, '..');
 const notesFolder = path.resolve(__dirname, '..', 'notes');
 const buildFolder = path.resolve(__dirname, '..', 'build');
 
@@ -24,12 +25,13 @@ function renderFile(renderer) {
 	return function (filePath) {
 		return new Promise((resolve, reject) => {
 			const relative = path.relative(notesFolder, filePath);
-			const outputFile = path.join(buildFolder, relative)
+			const parentFolder = /^\.\./.test(relative) ? 'notes' : '';
+			const outputFile = path.join(buildFolder, parentFolder, relative)
 				.replace('.md', '.html')
 				.replace('README', 'index');
 			const { dir:outputDir } = path.parse(outputFile);
 
-			const reqObj = {path: relative}
+			const reqObj = {fileToRender: relative}
 			const resObj = {send: content => {
 					mkdirp(outputDir)
 						.then(() => writeFile(outputFile, replaceReadMeForIndex(content)))
@@ -45,7 +47,9 @@ function renderFile(renderer) {
 }
 
 async function run () {
-	const allContent = await glob(`${notesFolder}/**/*.md`);
+	const rootReadme = await glob(`${rootFolder}/README.md`);
+	const notesContent = await glob(`${notesFolder}/**/*.md`);
+	const allContent = [...rootReadme, ...notesContent];
 	const selectorsExamples = await glob(`${notesFolder}/css/selectors/examples/**/*.md`);
 	const markdownContent = pullAll(allContent, selectorsExamples);
 
