@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Regular Expressions: overview | Notes | Peter Goes</title>
+
+<link rel="stylesheet" href="/notes/normalize.css">
+<link rel="stylesheet" href="/notes/base.css">
+<link rel="stylesheet" href="/notes/typography.css">
+<link rel="stylesheet" href="/notes/components/header.css">
+<link rel="stylesheet" href="/notes/components/footer.css">
+<link rel="stylesheet" href="/notes/components/nav.css">
+
+<link rel="shortcut icon" href="/notes/assets/logo-192.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+<link rel="stylesheet" href="/notes/highlightjs-theme.css">
+
+
+
+</head>
+<body>
+<header class="page-header">
+	<h1 class="page-header__title">Regular Expressions: overview</h1>
+</header>
+
+<nav class="breadcrumbs">
+
+	 
+	<a href="/notes/">
+	home
+	</a>
+
+	&gt;  
+	
+	javascript
+	
+
+</nav>
+
+<main class="" role="main">
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">General documentation</a></p>
+<p><a href="#exec"><code>RegExp.prototype.exec()</code></a><br><a href="#test"><code>RegExp.prototype.test()</code></a><br><a href="#match"><code>String.prototype.match()</code></a><br><a href="#search"><code>String.prototype.search()</code></a><br><a href="#replace"><code>String.prototype.replace()</code></a><br><a href="#split"><code>String.prototype.split()</code></a>  </p>
+<h2 id="regexp-literal-based-functions">RegExp literal based functions</h2>
+<h3 id="exec">exec</h3>
+<p>A <code>RegExp</code> method that executes a search for a match in a string. It returns an array of information or <code>null</code> on a mismatch<br>Identical to <a href="#match"><code>String.prototype.match()</code></a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">MDN documentation</a></p>
+<pre><code class="lang-javascript">const matches = /foo(-)/.exec(&quot;foo-bar-baz&quot;);
+const [ fullMatch, ...captureGroups ] = matches;
+const { index, input } = matches;
+console.log({ fullMatch, capturedGroups, index, input });
+// { fullMatch: &#39;foo-&#39;, captureGroups: [ &#39;-&#39; ], index: 0, input: &#39;foo-bar-baz&#39; }
+</code></pre>
+<h3 id="test">test</h3>
+<p>A <code>RegExp</code> method that tests for a match in a string. 
+It returns <code>true</code> or <code>false</code><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test">MDN documentation</a></p>
+<pre><code class="lang-javascript">/foo/.test(&quot;foo-bar-baz&quot;);
+// true
+</code></pre>
+<h2 id="string-based-functions">String based functions</h2>
+<h3 id="match">match</h3>
+<p>A <code>String</code> method that executes a search for a match in a string. It 
+returns an array of information or <code>null</code> on a mismatch.<br>See the example for the return value.<br>Identical to <a href="#exec"><code>RegExp.prototype.exec()</code></a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match">MDN documentation</a></p>
+<pre><code class="lang-javascript">const matches = &quot;foo-bar-baz&quot;.match(/foo(-)/);
+const [ fullMatch, ...captureGroups ] = matches;
+const { index, input } = matches;
+console.log({ fullMatch, capturedGroups, index, input });
+// { fullMatch: &#39;foo-&#39;, captureGroups: [ &#39;-&#39; ], index: 0, input: &#39;foo-bar-baz&#39; }
+</code></pre>
+<h3 id="search">search</h3>
+<p>A <code>String</code> method that tests for a match in a string. It returns the 
+index of the match, or <code>-1</code> if the search fails.<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search">MDN documentation</a></p>
+<pre><code class="lang-javascript">&quot;foo-bar-baz&quot;.search(/bar/);
+// 4
+</code></pre>
+<h3 id="replace">replace</h3>
+<p>A <code>String</code> method that executes a search for a match in a string, and
+replaces the matched substring with a replacement substring.
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">MDN documentation</a></p>
+<pre><code class="lang-javascript">&quot;foo-bar-baz&quot;.replace(&quot;foo&quot;, &quot;blub&quot;);
+// &#39;blub-bar-baz&#39;
+&quot;foo-bar-baz&quot;.replace(/b/g, &quot;f&quot;);
+// &#39;foo-far-faz&#39;
+&quot;foo-bar-baz&quot;.replace(/(\w+)-(\w+)-(\w+)/g, &quot;$3-$2-$1&quot;);
+// &#39;baz-bar-foo&#39;
+function replacer(match, s1, s2, s3, offset, string) {
+  return [s1, s2, s3].map(s =&gt; s.toUpperCase()).join(&#39;_&#39;);
+}
+&quot;foo-bar-baz&quot;.replace(/(\w+)-(\w+)-(\w+)/, replacer);
+// &#39;FOO_BAR_BAZ&#39;
+</code></pre>
+<h3 id="split">split</h3>
+<p>A <code>String</code> method that uses a regular expression or a fixed string to
+break a string into an array of substrings<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">MDN documentation</a></p>
+<pre><code class="lang-javascript">&quot;foo-bar-baz&quot;.split(&quot;-&quot;)
+// [ &#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39; ]
+&quot;foo-bar-baz&quot;.split(&quot;-&quot;, 2)
+// [ &#39;foo&#39;, &#39;bar&#39; ]
+</code></pre>
+
+
+</main>
+
+<footer class="page-footer">
+	<div class="page-footer__link-wrapper">
+		<a href="https://petergoes.nl" class="page-footer__link">
+			<span class="page-footer__name"><span class="page-footer__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-footer__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-footer__occupation">
+					<span class="page-footer__property">frontEnd</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-footer__property--value">developer</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-footer__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
