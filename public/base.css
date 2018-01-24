@@ -62,8 +62,16 @@ a {
   text-decoration: none
 }
 
+a > code {
+  text-decoration: underline;
+}
+
 a:hover {
   text-decoration: underline;
+}
+
+a:hover > code {
+  text-decoration-color: var(--code-regex);
 }
 
 @media (min-width: 600px) {
