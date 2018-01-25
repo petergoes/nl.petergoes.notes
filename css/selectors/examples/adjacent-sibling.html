@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Selectors Example: attribute-contains | Notes | Peter Goes</title>
+<title>Selectors Example: adjacent-sibling | Notes | Peter Goes</title>
 
 <link rel="stylesheet" href="/notes/normalize.css">
 <link rel="stylesheet" href="/notes/base.css">
@@ -22,7 +22,7 @@
 
 
 <style>[data-result]
-section[foo*=bar] {
+.foo + .bar {
     border: 3px dotted black;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -34,7 +34,7 @@ section[foo*=bar] {
 </head>
 <body>
 <header class="page-header">
-	<h1 class="page-header__title">Selectors Example: <code>attribute-contains</code></h1>
+	<h1 class="page-header__title">Selectors Example: <code>adjacent-sibling</code></h1>
 </header>
 
 <nav class="breadcrumbs">
@@ -64,15 +64,15 @@ section[foo*=bar] {
 <main class="css-selectors-examples" role="main">
 
 <section class="example__description"  data-label="Description">
-<blockquote><p>The <code>E[foo*=bar]</code> selector matches an element whose <code>foo</code> attribute value 
-contains the substring <code>bar</code></p>
+<blockquote><p>The <code>.foo + .bar</code> selector matches an <code>.bar</code> element immediately preceded by an 
+<code>.foo</code> element</p>
 
 
 </blockquote>
 </section>
 
 <section class="example__code example__code--style" data-label="CSS">
-<pre><code class="lang-css">section[foo*=bar] {
+<pre><code class="lang-css">.foo + .bar {
     border: 3px dotted black;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -81,28 +81,24 @@ contains the substring <code>bar</code></p>
 </section>
 
 <section class="example__code example__code--html" data-label="HTML">
-<pre><code class="lang-html">&lt;section foo=&quot;bar&quot;&gt;
-    Attribute foo=&quot;bar&quot;
-&lt;/section&gt;
-&lt;section foo=&quot;barbar&quot;&gt;
-    Attribute foo=&quot;barbar&quot;
-&lt;/section&gt;
-&lt;section foo=&quot;baz&quot;&gt;
-    Attribute foo=&quot;baz&quot;
-&lt;/section&gt;
+<pre><code class="lang-html">&lt;ul&gt;
+    &lt;li&gt;A &lt;code&gt;li&lt;/code&gt;element&lt;/li&gt;
+    &lt;li class=&quot;bar&quot;&gt;A &lt;code&gt;li&lt;/code&gt;element with a &lt;code&gt;.bar&lt;/code&gt; class&lt;/li&gt;
+    &lt;li class=&quot;foo&quot;&gt;A &lt;code&gt;li&lt;/code&gt;element with a &lt;code&gt;.foo&lt;/code&gt; class&lt;/li&gt;
+    &lt;li class=&quot;bar&quot;&gt;A &lt;code&gt;li&lt;/code&gt;element with a &lt;code&gt;.bar&lt;/code&gt; class&lt;/li&gt;
+    &lt;li class=&quot;bar&quot;&gt;A &lt;code&gt;li&lt;/code&gt;element with a &lt;code&gt;.bar&lt;/code&gt; class&lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
 </section>
 
 <section class="example__result" data-result  data-label="Result">
-<section foo="bar">
-    Attribute foo="bar"
-</section>
-<section foo="barbar">
-    Attribute foo="barbar"
-</section>
-<section foo="baz">
-    Attribute foo="baz"
-</section>
+<ul>
+    <li>A <code>li</code>element</li>
+    <li class="bar">A <code>li</code>element with a <code>.bar</code> class</li>
+    <li class="foo">A <code>li</code>element with a <code>.foo</code> class</li>
+    <li class="bar">A <code>li</code>element with a <code>.bar</code> class</li>
+    <li class="bar">A <code>li</code>element with a <code>.bar</code> class</li>
+</ul>
 
 </section>
 

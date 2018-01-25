@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Selectors Example: attribute-contains | Notes | Peter Goes</title>
+<title>Selectors Example: descendant | Notes | Peter Goes</title>
 
 <link rel="stylesheet" href="/notes/normalize.css">
 <link rel="stylesheet" href="/notes/base.css">
@@ -22,7 +22,13 @@
 
 
 <style>[data-result]
-section[foo*=bar] {
+section,
+section article {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.foo .bar {
     border: 3px dotted black;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -34,7 +40,7 @@ section[foo*=bar] {
 </head>
 <body>
 <header class="page-header">
-	<h1 class="page-header__title">Selectors Example: <code>attribute-contains</code></h1>
+	<h1 class="page-header__title">Selectors Example: <code>descendant</code></h1>
 </header>
 
 <nav class="breadcrumbs">
@@ -64,15 +70,21 @@ section[foo*=bar] {
 <main class="css-selectors-examples" role="main">
 
 <section class="example__description"  data-label="Description">
-<blockquote><p>The <code>E[foo*=bar]</code> selector matches an element whose <code>foo</code> attribute value 
-contains the substring <code>bar</code></p>
+<blockquote><p>The <code>.foo .bar</code> selector matches an <code>.bar</code> element descendant of an <code>.foo</code> 
+element</p>
 
 
 </blockquote>
 </section>
 
 <section class="example__code example__code--style" data-label="CSS">
-<pre><code class="lang-css">section[foo*=bar] {
+<pre><code class="lang-css">section,
+section article {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+.foo .bar {
     border: 3px dotted black;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -81,27 +93,39 @@ contains the substring <code>bar</code></p>
 </section>
 
 <section class="example__code example__code--html" data-label="HTML">
-<pre><code class="lang-html">&lt;section foo=&quot;bar&quot;&gt;
-    Attribute foo=&quot;bar&quot;
+<pre><code class="lang-html">&lt;section&gt;
+    A &lt;code&gt;section&lt;/code&gt; without a class attribute
+    &lt;p class=&quot;bar&quot;&gt;
+        A &lt;code&gt;p&lt;/code&gt; with a class of &lt;code&gt;.bar&lt;/code&gt;
+    &lt;/p&gt;
 &lt;/section&gt;
-&lt;section foo=&quot;barbar&quot;&gt;
-    Attribute foo=&quot;barbar&quot;
-&lt;/section&gt;
-&lt;section foo=&quot;baz&quot;&gt;
-    Attribute foo=&quot;baz&quot;
+&lt;section class=&quot;foo&quot;&gt;
+    A &lt;code&gt;section&lt;/code&gt; with a class of &lt;code&gt;.foo&lt;/code&gt;
+    &lt;article&gt;
+        A random &lt;code&gt;article&lt;/code&gt; element
+        &lt;p class=&quot;bar&quot;&gt;
+            A &lt;code&gt;p&lt;/code&gt; with a class of &lt;code&gt;.bar&lt;/code&gt;
+        &lt;/p&gt;
+    &lt;/article&gt;
 &lt;/section&gt;
 </code></pre>
 </section>
 
 <section class="example__result" data-result  data-label="Result">
-<section foo="bar">
-    Attribute foo="bar"
+<section>
+    A <code>section</code> without a class attribute
+    <p class="bar">
+        A <code>p</code> with a class of <code>.bar</code>
+    </p>
 </section>
-<section foo="barbar">
-    Attribute foo="barbar"
-</section>
-<section foo="baz">
-    Attribute foo="baz"
+<section class="foo">
+    A <code>section</code> with a class of <code>.foo</code>
+    <article>
+        A random <code>article</code> element
+        <p class="bar">
+            A <code>p</code> with a class of <code>.bar</code>
+        </p>
+    </article>
 </section>
 
 </section>
