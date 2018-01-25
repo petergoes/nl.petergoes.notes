@@ -1,4 +1,5 @@
-The `E[foo=bar]` selector matches an element whose `foo` attribute value is exactly equal to `bar`
+The `E[foo=bar]` selector matches an element whose `foo` attribute value is 
+exactly equal to `bar`
 
 
 ```css

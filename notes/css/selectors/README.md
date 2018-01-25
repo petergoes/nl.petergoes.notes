@@ -16,10 +16,10 @@
 * **`E[attribute*=value]`**: Matches an element with an attribute that [contains](examples/attribute-contains.md) the value somewhere.
 
 **[Combinators:](combinators.md)**
-* **`E F`**: 
-* **`E > F`**: 
-* **`E + F`**: 
-* **`E ~ F`**: 
+* **`E F`**: Matches the [descendant](examples/descendant.md) `F` of element `E`
+* **`E > F`**: Matches the [child](examples/child.md) `F` of element `E`
+* **`E + F`**: Matches the [adjacent sibling](examples/adjacent-sibling.md) `F` of element `E`
+* **`E ~ F`**: Matches the [general sibling](examples/general-sibling.md) `F` of element `E`
 
 **[Pseudo classes:](pseudo-classes.md)**
 * **`:empty`**:  

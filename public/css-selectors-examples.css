@@ -14,6 +14,7 @@
 
 .example__code {
     grid-column: 1 / span 2;
+	overflow-x: auto;
 }
 
 .example__code pre {

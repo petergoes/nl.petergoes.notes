@@ -1,4 +1,5 @@
-The `E[foo*=bar]` selector matches an element whose `foo` attribute value contains the substring `bar`
+The `E[foo*=bar]` selector matches an element whose `foo` attribute value 
+contains the substring `bar`
 
 ```css
 section[foo*=bar] {

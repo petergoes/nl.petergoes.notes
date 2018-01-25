@@ -1,4 +1,5 @@
-The `E[foo~=bar]` selector matches an element whose `foo` attribute value is a list of whitespace-separated values, one of which is exactly equal to `bar`
+The `E[foo~=bar]` selector matches an element whose `foo` attribute value is a 
+list of whitespace-separated values, one of which is exactly equal to `bar`
 
 Apparently it also matches `foo="bar"` (without a space)
 

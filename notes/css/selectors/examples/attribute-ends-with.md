@@ -1,4 +1,5 @@
-The `E[foo$=bar]` selector matches an element whose `foo` attribute value ends exactly with the string `bar`
+The `E[foo$=bar]` selector matches an element whose `foo` attribute value ends 
+exactly with the string `bar`
 
 ```css
 section[foo$=bar] {

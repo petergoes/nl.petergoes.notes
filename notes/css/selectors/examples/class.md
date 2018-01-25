@@ -1,4 +1,5 @@
-The `.class` selector matches any `<element>` with the specified `class` attribute
+The `.class` selector matches any `<element>` with the specified `class` 
+attribute
 
 ```css
 .brown {
