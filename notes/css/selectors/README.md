@@ -22,38 +22,40 @@
 * **`E ~ F`**: Matches the [general sibling](examples/general-sibling.md) `F` of element `E`
 
 **[Pseudo classes:](pseudo-classes.md)**
-* **`:empty`**:  
-* **`:root`**: 
-* **`:last-child`**: 
-* **`:only-child`**: 
-
-**[Pseudo elements:](pseudo-elements.md)**
-* **`:after`**: 
-* **`:before`**: 
 * **`:checked`**: 
 * **`:default`**: 
 * **`:disabled`**: 
+* **`:empty`**:  
 * **`:enabled`**: 
 * **`:first-child`**: 
-* **`:first-letter`**: 
-* **`:first-line`**: 
 * **`:first-of-type`**: 
 * **`:in-range`**: 
 * **`:indeterminate`**: 
 * **`:invalid`**: 
 * **`:lang()`**: 
+* **`:last-child`**: 
 * **`:last-of-type`**: 
 * **`:not()`**: 
 * **`:nth-child()`**: 
 * **`:nth-last-child()`**: 
 * **`:nth-last-of-type()`**: 
 * **`:nth-of-type()`**: 
+* **`:only-child`**:
 * **`:only-of-type`**: 
 * **`:optional`**: 
 * **`:out-of-range`**: 
 * **`:read-only`**: 
 * **`:read-write`**: 
 * **`:required`**: 
+* **`:root`**: 
 * **`:selection`**: 
 * **`:target`**: 
-* **`:valid`**: 
+* **`:valid`**:  
+
+**[Pseudo elements:](pseudo-elements.md)**
+* **`::after`**: 
+* **`::before`**:
+* **`::cue`**: 
+* **`::first-letter`**: 
+* **`::first-line`**: 
+* **`::selection`**:
