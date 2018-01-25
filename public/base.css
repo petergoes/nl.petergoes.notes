@@ -55,6 +55,11 @@ code {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   font-weight: normal;
+  white-space: pre-wrap;
+}
+
+pre code {
+  white-space: pre;
 }
 
 a {
