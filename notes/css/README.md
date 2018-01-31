@@ -1,5 +1,6 @@
 ## Sections
 
+* [Generated content](generated-content/README.md) (`::before`, `::after`)
 * [Selectors](selectors/README.md)
 * [Specificity](specificity.md)
 
