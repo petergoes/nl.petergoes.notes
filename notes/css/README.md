@@ -1,6 +1,7 @@
 ## Sections
 
 * [Selectors](selectors/README.md)
+* [Specificity](specificity.md)
 
 ## Specs
 
