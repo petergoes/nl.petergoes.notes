@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Specificity | Notes | Peter Goes</title>
+
+<link rel="stylesheet" href="/notes/normalize.css">
+<link rel="stylesheet" href="/notes/base.css">
+<link rel="stylesheet" href="/notes/typography.css">
+<link rel="stylesheet" href="/notes/components/header.css">
+<link rel="stylesheet" href="/notes/components/footer.css">
+<link rel="stylesheet" href="/notes/components/nav.css">
+
+<link rel="shortcut icon" href="/notes/assets/logo-192.png">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+<link rel="stylesheet" href="/notes/highlightjs-theme.css">
+
+
+
+</head>
+<body>
+<header class="page-header">
+	<h1 class="page-header__title">Specificity</h1>
+</header>
+
+<nav class="breadcrumbs">
+
+	 
+	<a href="/notes/">
+	home
+	</a>
+
+	&gt;  
+	
+	css
+	
+
+</nav>
+
+<main class="" role="main">
+
+<p><a href="https://specificity.keegan.st/">Specificity calculator</a></p>
+<p>Specificity is calculated via the 0-0-0-0 system where:</p>
+<pre><code>                                     classes
+  inline styles  -     id      -    attributes    -     elements
+                                  pseudo-classes     pseudo-elements
+----------------------------------------------------------------
+        0        -      0      -        0         -        0
+</code></pre><h2 id="adding-styles-via-javascript">Adding styles via JavaScript</h2>
+<p>When you modify a style property on an element via JavaScript:</p>
+<pre><code class="lang-js">myElement.style.backgroundColor = &#39;red&#39;;
+</code></pre>
+<p>It does so by applying an inline style to <code>myElement</code>. By definition, if you
+apply styles via JavaScript, you&#39;ll get a 1-0-0-0 css specificity!</p>
+<h2 id="calculating-specificity">Calculating specificity</h2>
+<p>From the diagram above, a selector is graded a weight. All parts of the selector 
+get a weight and the weight of the selector is the sum of its parts. </p>
+<p>The selector <code>.class div::after</code>, consist out of three parts, <code>.class</code>, <code>div</code>
+and <code>::after</code>. These three parts have the following weights respectively:
+<code>0-0-1-0</code>, <code>0-0-0-1</code>, <code>0-0-0-1</code>. So the weight of the selector will be: 
+<code>0-0-1-2</code>.</p>
+<p>Combinators (<code>&gt;</code>, <code>~</code>, <code>+</code>) do not add to the weight.</p>
+<p><code>:not()</code> does not have a weight, but the selector inside the <code>()</code> does.</p>
+<pre><code class="lang-css">* {} /* 0-0-0-0 */
+
+div {} /* 0-0-0-1 */
+div span {} /* 0-0-0-2 */
+div &gt; span {} /* 0-0-0-2 */
+div::after {} /* 0-0-0-2 */
+div div::after {} /* 0-0-0-3 */
+
+.class {} /* 0-0-1-0 */
+[data-something] {} /* 0-0-1-0 */
+.class::after {} /* 0-0-1-1 */
+.class:focus {} /* 0-0-2-0 */
+.class .other-class {} /* 0-0-2-0 */
+div .class .other-class {} /* 0-0-2-1 */
+
+#id {} /* 0-1-0-0 */
+#id .class {} /* 0-1-1-0 */
+#id .class div {} /* 0-1-1-1 */
+#id .class:focus span::after {} /* 0-1-2-2 */
+
+#id .class:not(.other-class) {} /* 0-1-2-0 */
+</code></pre>
+
+
+</main>
+
+<footer class="page-footer">
+	<div class="page-footer__link-wrapper">
+		<a href="https://petergoes.nl" class="page-footer__link">
+			<span class="page-footer__name"><span class="page-footer__code-decoration" aria-hidden="true" role="presentation" tabindex="-1">.</span>peter-goes</span> <span class="page-footer__code-decoration" aria-hidden="true" role="presentation">{</span> 
+				<span class="page-footer__occupation">
+					<span class="page-footer__property">frontEnd</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">:</span> <span class="page-footer__property--value">developer</span><span class="page-footer__code-decoration" aria-hidden="true" role="presentation">;</span></span>
+				</span>
+			<span class="page-footer__code-decoration" aria-hidden="true" role="presentation">}</span>
+		</a>
+	</div>
+</footer>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

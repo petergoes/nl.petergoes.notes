@@ -47,68 +47,70 @@
 
 <main class="" role="main">
 
-<p><a href="https://www.w3.org/TR/css3-selectors/">CSS3 spec - selectors</a></p>
+<p><a href="https://www.w3.org/TR/css3-selectors/">CSS3 spec - selectors</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">MDN - CSS selectors</a></p>
 <p><strong><a href="basic-selectors.html">Basic selectors:</a></strong></p>
 <ul>
-<li><strong><code>*</code></strong>: Matches <a href="examples/any.html">any element</a></li>
-<li><strong><code>E</code></strong>: Matches a specified <a href="examples/element.html">element</a></li>
-<li><strong><code>.class</code></strong>: Matches an element with a specified <a href="examples/class.html">class</a> attribute</li>
-<li><strong><code>#id</code></strong>: Matches an element with a specified <a href="examples/id.html">id</a> attribute</li>
-<li><strong><code>E[attribute]</code></strong>: Matches an element with a specified <a href="examples/attribute.html">attribute</a></li>
-<li><strong><code>E[attribute=value]</code></strong>: Matches an element with a specific <a href="examples/attribute-equal.html">equal</a> attribute / value pair</li>
-<li><strong><code>E[attribute~=value]</code></strong>: Matches an element with an attribute that includes <a href="examples/attribute-whitespace-separated.html">whitespace-seperated</a> word equal to the value</li>
-<li><strong><code>E[attribute|=value]</code></strong>: Matches an element with an attribute that includes <a href="examples/attribute-hyphen-separated.html">hyphen-seperated</a> list of values starting with the value</li>
-<li><strong><code>E[attribute^=value]</code></strong>: Matches an element with an attribute where the value <a href="examples/attribute-starts-with.html">starts with</a> exactly the value</li>
-<li><strong><code>E[attribute$=value]</code></strong>: Matches an element with an attribute where the value <a href="examples/attribute-ends-with.html">ends with</a> exactly the value</li>
-<li><strong><code>E[attribute*=value]</code></strong>: Matches an element with an attribute that <a href="examples/attribute-contains.html">contains</a> the value somewhere.</li>
+<li><strong><a href="examples/any.html"><code>*</code></a></strong>: Matches any element</li>
+<li><strong><a href="examples/element.html"><code>E</code></a></strong>: Matches a specified element</li>
+<li><strong><a href="examples/class.html"><code>.class</code></a></strong>: Matches an element with a specified class attribute</li>
+<li><strong><a href="examples/id.html"><code>#id</code></a></strong>: Matches an element with a specified id attribute</li>
+<li><strong><a href="examples/attribute.html"><code>E[attribute]</code></a></strong>: Matches an element with a specified attribute</li>
+<li><strong><a href="examples/attribute-equal.html"><code>E[attribute=value]</code></a></strong>: Matches an element with a specific equal attribute / value pair</li>
+<li><strong><a href="examples/attribute-whitespace-separated.html"><code>E[attribute~=value]</code></a></strong>: Matches an element with an attribute that includes whitespace-seperated word equal to the value</li>
+<li><strong><a href="examples/attribute-hyphen-separated.html"><code>E[attribute|=value]</code></a></strong>: Matches an element with an attribute that includes hyphen-seperated list of values starting with the value</li>
+<li><strong><a href="examples/attribute-starts-with.html"><code>E[attribute^=value]</code></a></strong>: Matches an element with an attribute where the value starts with exactly the value</li>
+<li><strong><a href="examples/attribute-ends-with.html"><code>E[attribute$=value]</code></a></strong>: Matches an element with an attribute where the value ends with exactly the value</li>
+<li><strong><a href="examples/attribute-contains.html"><code>E[attribute*=value]</code></a></strong>: Matches an element with an attribute that contains the value somewhere.</li>
 </ul>
 <p><strong><a href="combinators.html">Combinators:</a></strong></p>
 <ul>
-<li><strong><code>E F</code></strong>: Matches the <a href="examples/descendant.html">descendant</a> <code>F</code> of element <code>E</code></li>
-<li><strong><code>E &gt; F</code></strong>: Matches the <a href="examples/child.html">child</a> <code>F</code> of element <code>E</code></li>
-<li><strong><code>E + F</code></strong>: Matches the <a href="examples/adjacent-sibling.html">adjacent sibling</a> <code>F</code> of element <code>E</code></li>
-<li><strong><code>E ~ F</code></strong>: Matches the <a href="examples/general-sibling.html">general sibling</a> <code>F</code> of element <code>E</code></li>
+<li><strong><a href="examples/descendant.html"><code>E F</code></a></strong>: Matches the descendant <code>F</code> of element <code>E</code></li>
+<li><strong><a href="examples/child.html"><code>E &gt; F</code></a></strong>: Matches the child <code>F</code> of element <code>E</code></li>
+<li><strong><a href="examples/adjacent-sibling.html"><code>E + F</code></a></strong>: Matches the adjacent sibling <code>F</code> of element <code>E</code></li>
+<li><strong><a href="examples/general-sibling.html"><code>E ~ F</code></a></strong>: Matches the general sibling <code>F</code> of element <code>E</code></li>
 </ul>
 <p><strong><a href="pseudo-classes.html">Pseudo classes:</a></strong></p>
 <ul>
-<li><strong><code>:checked</code></strong>: </li>
-<li><strong><code>:default</code></strong>: </li>
-<li><strong><code>:disabled</code></strong>: </li>
-<li><strong><code>:empty</code></strong>:  </li>
-<li><strong><code>:enabled</code></strong>: </li>
-<li><strong><code>:first-child</code></strong>: </li>
-<li><strong><code>:first-of-type</code></strong>: </li>
-<li><strong><code>:in-range</code></strong>: </li>
-<li><strong><code>:indeterminate</code></strong>: </li>
-<li><strong><code>:invalid</code></strong>: </li>
-<li><strong><code>:lang()</code></strong>: </li>
-<li><strong><code>:last-child</code></strong>: </li>
-<li><strong><code>:last-of-type</code></strong>: </li>
-<li><strong><code>:not()</code></strong>: </li>
-<li><strong><code>:nth-child()</code></strong>: </li>
-<li><strong><code>:nth-last-child()</code></strong>: </li>
-<li><strong><code>:nth-last-of-type()</code></strong>: </li>
-<li><strong><code>:nth-of-type()</code></strong>: </li>
-<li><strong><code>:only-child</code></strong>:</li>
-<li><strong><code>:only-of-type</code></strong>: </li>
-<li><strong><code>:optional</code></strong>: </li>
-<li><strong><code>:out-of-range</code></strong>: </li>
-<li><strong><code>:read-only</code></strong>: </li>
-<li><strong><code>:read-write</code></strong>: </li>
-<li><strong><code>:required</code></strong>: </li>
-<li><strong><code>:root</code></strong>: </li>
-<li><strong><code>:selection</code></strong>: </li>
-<li><strong><code>:target</code></strong>: </li>
-<li><strong><code>:valid</code></strong>:  </li>
+<li><strong><a href="examples/active.html"><code>:active</code></a></strong>: element that is being activated by the user</li>
+<li><strong><a href="examples/checked.html"><code>:checked</code></a></strong>: a user interface element E which is checked (for instance a radio-button or checkbox) </li>
+<li><strong><a href="examples/disabled.html"><code>:disabled</code></a></strong>: a user interface element E which is disabled</li>
+<li><strong><a href="examples/empty.html"><code>:empty</code></a></strong>:  an E element that has no children (including text nodes) </li>
+<li><strong><a href="examples/enabled.html"><code>:enabled</code></a></strong>: a user interface element E which is enabled</li>
+<li><strong><a href="examples/first-child.html"><code>:first-child</code></a></strong>: an E element, first-child of its parent </li>
+<li><strong><a href="examples/first-of-type.html"><code>:first-of-type</code></a></strong>: an E element, first sibling of its type</li>
+<li><strong><a href="examples/focus.html"><code>:focus</code></a></strong>: element that has focus</li>
+<li><strong><a href="examples/hover.html"><code>:hover</code></a></strong>: element that is being hovered over by the user </li>
+<li><strong><a href="examples/in-range.html"><code>:in-range</code></a></strong>: element whose current value is within the range limits specified by the min and max attributes </li>
+<li><strong><a href="examples/indeterminate.html"><code>:indeterminate</code></a></strong>:  element whose state is indeterminate</li>
+<li><strong><a href="examples/invalid.html"><code>:invalid</code></a></strong>: element whose contents fail to validate</li>
+<li><strong><a href="examples/lang.html"><code>:lang(nl)</code></a></strong>: an element of type E in language <code>nl</code></li>
+<li><strong><a href="examples/last-child.html"><code>:last-child</code></a></strong>: an E element, last child of its parent </li>
+<li><strong><a href="examples/last-of-type.html"><code>:last-of-type</code></a></strong>: an E element, last sibling of its type</li>
+<li><strong><a href="examples/link.html"><code>:link</code></a></strong>: element that has not yet been visited</li>
+<li><strong><a href="examples/not.html"><code>:not()</code></a></strong>: an E element that does not match a simple selector</li>
+<li><strong><a href="examples/nth-child.html"><code>:nth-child(n)</code></a></strong>: an E element, the n-th child of its parent </li>
+<li><strong><a href="examples/nth-last-child.html"><code>:nth-last-child(n)</code></a></strong>: an E element, the n-th child of its parent, counting from the last one</li>
+<li><strong><a href="examples/nth-last-of-type.html"><code>:nth-last-of-type()</code></a></strong>: an E element, the n-th sibling of its type</li>
+<li><strong><a href="examples/nth-of-type.html"><code>:nth-of-type(n)</code></a></strong>: an E element, the n-th sibling of its type, counting from the last one</li>
+<li><strong><a href="examples/only-child.html"><code>:only-child</code></a></strong>: an E element, only child of its parent </li>
+<li><strong><a href="examples/only-of-type.html"><code>:only-of-type</code></a></strong>: an E element, only sibling of its type</li>
+<li><strong><a href="examples/optional.html"><code>:optional</code></a></strong>: element that does not have the required attribute set on it </li>
+<li><strong><a href="examples/out-of-range.html"><code>:out-of-range</code></a></strong>: element whose current value is outside the range limits specified by the min and max attributes </li>
+<li><strong><a href="examples/read-only.html"><code>:read-only</code></a></strong>: element (such as a locked text input) that is not editable by the user </li>
+<li><strong><a href="examples/read-write.html"><code>:read-write</code></a></strong>: element (such as a text input) that is editable by the user </li>
+<li><strong><a href="examples/required.html"><code>:required</code></a></strong>: element that has the required attribute set on it </li>
+<li><strong><a href="examples/root.html"><code>:root</code></a></strong>: an E element, root of the document </li>
+<li><strong><a href="examples/target.html"><code>:target</code></a></strong>: an E element being the target of the referring URI </li>
+<li><strong><a href="examples/valid.html"><code>:valid</code></a></strong>: element whose contents validate successfully </li>
+<li><strong><a href="examples/visited.html"><code>:visited</code></a></strong>: element that has been visited</li>
 </ul>
 <p><strong><a href="pseudo-elements.html">Pseudo elements:</a></strong></p>
 <ul>
-<li><strong><code>::after</code></strong>: </li>
-<li><strong><code>::before</code></strong>:</li>
-<li><strong><code>::cue</code></strong>: </li>
-<li><strong><code>::first-letter</code></strong>: </li>
-<li><strong><code>::first-line</code></strong>: </li>
-<li><strong><code>::selection</code></strong>:</li>
+<li><strong><a href="examples/after.html"><code>::after</code></a></strong>: Generates an pseudo element after the elements content</li>
+<li><strong><a href="examples/before.html"><code>::before</code></a></strong>: Generates an pseudo element before the elements content</li>
+<li><strong><a href="examples/first-letter.html"><code>::first-letter</code></a></strong>: Matches the first formatted letter of an element</li>
+<li><strong><a href="examples/first-line.html"><code>::first-line</code></a></strong>: Matches the first formatted line of an element</li>
+<li><strong><a href="examples/selection.html"><code>::selection</code></a></strong>: Applies styles to the portion of a document that has been highlighted by the user</li>
 </ul>
 
 
