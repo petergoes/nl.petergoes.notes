@@ -9,7 +9,7 @@
     "build": "npm-run-all build:*",
     "build:html": "node tasks/build-html.js",
     "build:assets": "ncp public build",
-    "postbuild": "npm run replace-for-gh-pages",
+    "dontpostbuild": "npm run replace-for-gh-pages",
     "replace-for-gh-pages": "npm-run-all replace-for-gh-pages:*",
     "replace-for-gh-pages:html": "replace 'href=\"/' 'href=\"/notes/' build --recursive --silent --include='*.html'",
     "replace-for-gh-pages:css": "replace \"url.'/\" \"url('/notes/\" build --recursive --silent --include='*.css'"
